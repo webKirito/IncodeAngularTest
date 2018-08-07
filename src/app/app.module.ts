@@ -12,6 +12,7 @@ import { ClientsListComponent } from './clients-list/clients-list.component';
 import { ClientItemComponent } from './client-item/client-item.component';
 import { SearchClientInputComponent } from './search-client-input/search-client-input.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
+import { FormsModule } from '../../node_modules/@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ClientInfoComponent } from './client-info/client-info.component';
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MatInputModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

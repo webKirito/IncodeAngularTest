@@ -1,3 +1,6 @@
-<mat-form-field class="example-full-width">
-    <input matInput placeholder="Input" [disabled]="!editMode">
-</mat-form-field>
+<input 
+  type="text"
+  placeholder="Enter user name:"
+  [(ngModel)]="clientName"
+  (keyup)="onSearch()"
+>

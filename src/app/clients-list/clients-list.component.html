@@ -1,3 +1,7 @@
-<p>
-  clients-list works!
-</p>
+<div class="client-list">
+    <app-search-client-input (searchClient)="onSearch($event)"></app-search-client-input>
+    <app-client-item
+    [client]="c"
+    *ngFor="let c of clients"
+  ></app-client-item>
+</div>

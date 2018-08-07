@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit ,NgModule, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,17 @@ import { Component, OnInit, NgModule } from '@angular/core';
 
 export class SearchClientInputComponent implements OnInit {
 
-  constructor() { }
+  public clientName: string = '';
+  
+  @Output() searchClient = new EventEmitter<string>()
+  
+  onSearch() {
+    this.searchClient.emit(this.clientName);
+  }
+  
+  constructor() { 
+
+  }
 
   ngOnInit() {
   }
