@@ -1,11 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import {Client} from '../client.model';
-import { log } from 'util';
+// import {ClientsService} from '../clients.service';
+
+
 @Component({
   selector: 'app-clients-list',
   templateUrl: './clients-list.component.html',
   styleUrls: ['./clients-list.component.css']
 })
+
+
 export class ClientsListComponent implements OnInit {
 
   public clients: Client[] = [
@@ -14,17 +18,21 @@ export class ClientsListComponent implements OnInit {
     new Client('dad','dad','3')
   ]
 
+  public data : any;
+
   public initialClientsState: Client[] = [...this.clients];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
 
   }
 
+  ngOnInit() {
+    fetch('clients.json').then(res => res.json())
+      .then(res => console.log(res));
+      
+  }
+
   onSearch(str : string) {
-    console.log(str.length);
-    
     if (str.trim()) {
       this.clients = [...this.initialClientsState].filter(client => client.name.startsWith(str));
     } else if(!str) {

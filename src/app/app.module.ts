@@ -13,6 +13,7 @@ import { ClientItemComponent } from './client-item/client-item.component';
 import { SearchClientInputComponent } from './search-client-input/search-client-input.component';
 import { ClientInfoComponent } from './client-info/client-info.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
+// import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,12 @@ import { FormsModule } from '../../node_modules/@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    FormsModule
+    FormsModule,
+    // HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // HttpClientModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
